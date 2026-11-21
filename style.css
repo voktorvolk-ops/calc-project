@@ -37,7 +37,7 @@ body {
 
 .logo {
   color: var(--green-dark);
-  font-size: 1.1rem;
+  font-size: 18px;
   font-weight: 800;
   text-decoration: none;
 }
@@ -102,9 +102,9 @@ input:focus, select:focus {
   cursor: pointer;
 }
 
-.button-primary { background: var(--green); color: #fff; }
+.button-primary { background: var(--green); color: #059669; }
 .button-primary:hover { background: var(--green-dark); }
-.button-secondary { border: 1px solid var(--line); background: #fff; color: var(--ink); }
+.button-secondary { border: 1px solid var(--line); background: #059669; color: var(--ink); }
 .button-secondary:hover { background: var(--mint); }
 
 form > .button { align-self: end; }
