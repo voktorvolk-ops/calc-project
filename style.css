@@ -97,7 +97,7 @@ input:focus, select:focus {
   border: 0;
   border-radius: 10px;
   font: inherit;
-  font-weight: 750;
+  font-weight: 1750;
   text-decoration: none;
   cursor: pointer;
 }
