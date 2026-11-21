@@ -1,0 +1,143 @@
+:root {
+  color-scheme: light;
+  --ink: #18332e;
+  --muted: #6c7d78;
+  --green: #187b62;
+  --green-dark: #11634f;
+  --mint: #e9f5ef;
+  --line: #dce8e2;
+  --surface: #fff;
+  --background: #f5f8f6;
+  --danger: #a73535;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--ink);
+  line-height: 1.55;
+}
+
+.container {
+  width: min(900px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+.site-header {
+  min-height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  border-bottom: 1px solid var(--line);
+}
+
+.logo {
+  color: var(--green-dark);
+  font-size: 1.1rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.header-note, .muted { color: var(--muted); }
+
+.hero { padding: 48px 0 25px; }
+
+.eyebrow {
+  margin: 0 0 8px;
+  color: var(--green);
+  font-size: .75rem;
+  font-weight: 800;
+  letter-spacing: .12em;
+}
+
+h1, h2, p { margin-top: 0; }
+h1 { max-width: 700px; margin-bottom: 12px; font-size: clamp(2rem, 6vw, 3.25rem); line-height: 1.12; }
+h2 { margin-bottom: 18px; font-size: 1.35rem; }
+.intro { max-width: 620px; margin-bottom: 0; color: var(--muted); }
+
+.card {
+  margin-bottom: 20px;
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--surface);
+  box-shadow: 0 8px 26px rgb(25 62 47 / 5%);
+}
+
+form { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.field { display: grid; gap: 8px; }
+.field label { font-size: .92rem; font-weight: 700; }
+
+input, select {
+  width: 100%;
+  min-height: 48px;
+  padding: 11px 13px;
+  border: 1px solid #cddbd4;
+  border-radius: 10px;
+  background: #fff;
+  color: var(--ink);
+  font: inherit;
+}
+
+input:focus, select:focus {
+  outline: 3px solid rgb(24 123 98 / 16%);
+  border-color: var(--green);
+}
+
+.button {
+  display: inline-flex;
+  min-height: 46px;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 17px;
+  border: 0;
+  border-radius: 10px;
+  font: inherit;
+  font-weight: 750;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.button-primary { background: var(--green); color: #fff; }
+.button-primary:hover { background: var(--green-dark); }
+.button-secondary { border: 1px solid var(--line); background: #fff; color: var(--ink); }
+.button-secondary:hover { background: var(--mint); }
+
+form > .button { align-self: end; }
+.feedback { grid-column: 1 / -1; min-height: 1.5em; margin: -8px 0 0; color: var(--danger); font-weight: 650; }
+.result-card { border-color: #b8dfcd; background: var(--mint); }
+.result-card h2 { margin-bottom: 6px; }
+#total { color: var(--green-dark); }
+.result-card .muted { margin-bottom: 0; }
+
+.section-heading { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.section-heading h2 { margin-bottom: 0; }
+.history-list { display: grid; gap: 12px; padding-left: 24px; }
+.history-list li { padding: 14px 16px; border: 1px solid var(--line); border-radius: 12px; overflow-wrap: anywhere; }
+.history-time { display: block; margin-bottom: 4px; color: var(--muted); font-size: .86rem; }
+.history-total { color: var(--green-dark); font-weight: 800; }
+#empty-history { margin: 20px 0 0; }
+
+.site-footer { padding: 8px 0 30px; color: var(--muted); font-size: .85rem; }
+.error-page { min-height: 100vh; }
+.error-card { max-width: 650px; margin: 14vh auto 0; }
+.error-card .button { margin-top: 24px; }
+
+[hidden] { display: none !important; }
+
+@media (max-width: 600px) {
+  .container { width: min(100% - 28px, 900px); }
+  .site-header { min-height: 66px; }
+  .header-note { max-width: 130px; text-align: right; font-size: .8rem; }
+  .hero { padding: 35px 0 20px; }
+  .card { padding: 20px; border-radius: 14px; }
+  form { grid-template-columns: 1fr; gap: 15px; }
+  form > .button { width: 100%; }
+  .section-heading { align-items: flex-start; flex-direction: column; }
+  .section-heading .button { width: 100%; }
+  .error-card { margin-top: 10vh; }
+}
