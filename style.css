@@ -108,7 +108,7 @@ input:focus, select:focus {
 .button-secondary:hover { background: var(--mint); }
 
 form > .button { align-self: end; }
-.feedback { grid-column: 1 / -1; min-height: 1.5em; margin: -8px 0 0; color: var(--danger); font-weight: 650; }
+.feedback { grid-column: 1 / -1; min-height: 1.5em; margin: 18px 0 0; color: var(--danger); font-weight: 650; }
 .result-card { border-color: #b8dfcd; background: var(--mint); }
 .result-card h2 { margin-bottom: 6px; }
 #total { color: var(--green-dark); }
