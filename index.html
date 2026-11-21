@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Смета клининговой фирмы</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="container">
+    <header class="site-header">
+      <a class="logo" href="index.html">Чистый расчёт</a>
+      <span class="header-note">Смета клининговой фирмы</span>
+    </header>
+
+    <section class="hero">
+      <p class="eyebrow">ОНЛАЙН-КАЛЬКУЛЯТОР</p>
+      <h1>Рассчитайте стоимость уборки</h1>
+      <p class="intro">Укажите параметры помещения — калькулятор подготовит предварительную смету.</p>
+    </section>
+
+    <section class="card" aria-labelledby="form-title">
+      <h2 id="form-title">Данные для расчёта</h2>
+      <form id="estimate-form" novalidate>
+        <div class="field">
+          <label for="area">Площадь помещения, м²</label>
+          <input id="area" name="area" type="text" inputmode="decimal"
+                 placeholder="Например, 65" autocomplete="off">
+        </div>
+
+        <div class="field">
+          <label for="rooms">Количество комнат</label>
+          <input id="rooms" name="rooms" type="text" inputmode="numeric"
+                 placeholder="Например, 3" autocomplete="off">
+        </div>
+
+        <div class="field">
+          <label for="cleaning-type">Тип уборки</label>
+          <select id="cleaning-type" name="cleaningType">
+            <option value="regular">Поддерживающая</option>
+            <option value="general">Генеральная</option>
+            <option value="after-renovation">После ремонта</option>
+          </select>
+        </div>
+
+        <button class="button button-primary" type="submit">Рассчитать смету</button>
+        <p id="feedback" class="feedback" role="alert" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section id="result-card" class="card result-card" aria-live="polite" hidden>
+      <p class="eyebrow">ПРЕДВАРИТЕЛЬНАЯ СМЕТА</p>
+      <h2>Итого: <span id="total">0 ₽</span></h2>
+      <p id="calculation-details" class="muted"></p>
+    </section>
+
+    <section class="card history-card" aria-labelledby="history-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">СОХРАНЁННЫЕ РАСЧЁТЫ</p>
+          <h2 id="history-title">Журнал запросов</h2>
+        </div>
+        <button id="clear-history" class="button button-secondary" type="button">
+          Очистить журнал
+        </button>
+      </div>
+      <ol id="history-list" class="history-list"></ol>
+      <p id="empty-history" class="muted">Пока расчётов нет.</p>
+    </section>
+
+    <footer class="site-footer">Предварительная стоимость. Итоговую цену уточнит менеджер.</footer>
+  </main>
+</body>
+</html>
